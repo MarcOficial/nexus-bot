@@ -99,3 +99,39 @@ function drawMatrix() {
     requestAnimationFrame(drawMatrix);
 }
 drawMatrix();
+
+
+// TEXTOS DINÁMICOS DEL BOT
+const loadingPhrases = [
+    "Inicializando módulos...",
+    "Cargando sistema anti-raid...",
+    "Optimizando seguridad...",
+    "Sincronizando comandos...",
+    "Conectando con Discord API...",
+    "Nexus Bot está listo."
+];
+
+let phraseIndex = 0;
+const loadingText = document.getElementById("loadingText");
+
+function changeLoadingText() {
+    loadingText.textContent = loadingPhrases[phraseIndex];
+    phraseIndex = (phraseIndex + 1) % loadingPhrases.length;
+}
+setInterval(changeLoadingText, 1200);
+
+// ANIMACIÓN DE ENTRADA Y SALIDA
+window.addEventListener("load", () => {
+    gsap.to("#loadingScreen", {
+        opacity: 0,
+        duration: 1,
+        delay: 2.5,
+        onComplete: () => {
+            document.getElementById("loadingScreen").classList.add("hidden");
+        }
+    });
+
+    // Animación de entrada del contenido
+    gsap.from(".hero-title", { y: 40, opacity: 0, duration: 1.2, ease: "power3.out", delay: 3 });
+    gsap.from(".subtitle", { y: 30, opacity: 0, duration: 1, ease: "power3.out", delay: 3.2 });
+});
