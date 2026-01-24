@@ -5,8 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus Bot — IA de Moderación</title>
     <link rel="stylesheet" href="style.css">
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
-<body>
+<body class="theme-dark">
+
+    <!-- FONDO CÓDIGO DIGITAL -->
+    <div class="code-background">
+        <canvas id="codeCanvas"></canvas>
+    </div>
 
     <!-- NAVBAR -->
     <nav class="navbar">
@@ -17,22 +26,20 @@
             <li><a href="#utilities">Utilidades</a></li>
             <li><a href="#features">Características</a></li>
         </ul>
+        <button id="themeToggle" class="theme-toggle">☾</button>
     </nav>
 
     <!-- HERO -->
     <header class="hero">
         <div class="hero-content">
-            <h1><span class="glow">Nexus Bot</span></h1>
-            <p class="subtitle">Nexus Bot es el centro de mando y entretenimiento que tu servidor necesita. Diseñado para ofrecer una experiencia de moderación, utilidad y comunidad sin igual, aquí, cada comando es esencial, cada interacción es significativa, y cada día es una nueva oportunidad para optimizar tu comunidad.
-</p>
+            <h1 class="hero-title"><span class="glow">Nexus Bot</span></h1>
+            <p class="subtitle">La inteligencia artificial que impulsa tu servidor.</p>
 
             <div class="buttons">
                 <a href="https://discord.com/oauth2/authorize?client_id=1431564144590721044" class="btn primary">Añadir a Discord</a>
                 <a href="https://discord.gg/uQfpMv7cJU" class="btn secondary">Servidor de Soporte</a>
             </div>
         </div>
-
-        <div class="hero-grid"></div>
     </header>
 
     <!-- SOBRE EL BOT -->
@@ -49,19 +56,19 @@
     <section class="section features" id="moderation">
         <h2 class="section-title">🛡️ Moderación y Seguridad</h2>
         <div class="cards">
-            <div class="card">
+            <div class="card card-3d">
                 <h3>🔹 Anti-Spam / Anti-Raid</h3>
                 <p>Detección inteligente con respuesta automática en milisegundos.</p>
             </div>
-            <div class="card">
+            <div class="card card-3d">
                 <h3>🔹 Warns / Kicks / Bans</h3>
                 <p>Sistema de sanciones avanzado con logs y configuraciones dinámicas.</p>
             </div>
-            <div class="card">
+            <div class="card card-3d">
                 <h3>🔹 Verificación</h3>
                 <p>CAPTCHA, reacción o métodos híbridos para máxima seguridad.</p>
             </div>
-            <div class="card">
+            <div class="card card-3d">
                 <h3>🔹 Auto-Moderación</h3>
                 <p>Filtros inteligentes de palabras, enlaces y contenido no deseado.</p>
             </div>
@@ -72,11 +79,11 @@
     <section class="section utilities" id="utilities">
         <h2 class="section-title">🛠️ Utilidades y Personalización</h2>
         <div class="cards">
-            <div class="card">
+            <div class="card card-3d">
                 <h3>💻 Comandos de Utilidad</h3>
                 <p>Clima, información del servidor, búsquedas web y más.</p>
             </div>
-            <div class="card">
+            <div class="card card-3d">
                 <h3>⚙️ Perfiles Personalizados</h3>
                 <p>Niveles, economía virtual y roles automáticos.</p>
             </div>
@@ -100,3 +107,4 @@
 
 </body>
 </html>
+
