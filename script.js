@@ -132,3 +132,33 @@ function drawMatrix() {
 }
 drawMatrix();
 
+/* ------------------------------
+   CIRCUIT LINES ANIMATION
+------------------------------ */
+
+const circuitContainer = document.getElementById("circuit-lines");
+
+function createCircuitLine() {
+    const line = document.createElement("div");
+
+    const isVertical = Math.random() > 0.5;
+
+    if (isVertical) {
+        line.classList.add("circuit-line", "circuit-vertical");
+        line.style.left = Math.random() * window.innerWidth + "px";
+        line.style.top = Math.random() * window.innerHeight + "px";
+        line.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    } else {
+        line.classList.add("circuit-line");
+        line.style.width = Math.random() * 200 + 100 + "px";
+        line.style.top = Math.random() * window.innerHeight + "px";
+        line.style.left = Math.random() * window.innerWidth + "px";
+        line.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    }
+
+    circuitContainer.appendChild(line);
+
+    setTimeout(() => line.remove(), 6000);
+}
+
+setInterval(createCircuitLine, 200);
