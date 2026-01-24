@@ -1,3 +1,27 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* THEMES */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+body.theme-dark {
+    background: #050505;
+    color: #e0e0e0;
+}
+
+body.theme-light {
+    background: #f5f5f5;
+    color: #111;
+}
+
 /* LOADING SCREEN */
 #loadingScreen {
     position: fixed;
@@ -42,49 +66,17 @@
     color: #fff;
 }
 
-/* Ocultar cuando termine */
 #loadingScreen.hidden {
     opacity: 0;
     pointer-events: none;
 }
 
-
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* THEMES */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow-x: hidden;
-    transition: background 0.4s ease, color 0.4s ease;
-}
-
-body.theme-dark {
-    background: #050505;
-    color: #e0e0e0;
-}
-
-body.theme-light {
-    background: #f5f5f5;
-    color: #111;
-}
-
-/* CODE BACKGROUND */
-.code-background {
+/* MATRIX BACKGROUND */
+#codeCanvas {
     position: fixed;
     inset: 0;
     z-index: -2;
     opacity: 0.25;
-}
-
-#codeCanvas {
-    width: 100%;
-    height: 100%;
-    display: block;
 }
 
 /* NAVBAR */
@@ -309,4 +301,3 @@ body.theme-light footer {
         padding: 80px 20px;
     }
 }
-
