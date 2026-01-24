@@ -423,3 +423,38 @@ body.theme-light footer {
         padding: 80px 20px;
     }
 }
+
+/* CIRCUIT LINES BACKGROUND */
+#circuit-lines {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.circuit-line {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #8a4bff, transparent);
+    opacity: 0.7;
+    animation: circuitMove 4s linear infinite;
+    filter: drop-shadow(0 0 6px #8a4bff);
+}
+
+.circuit-vertical {
+    width: 2px;
+    height: 120px;
+    background: linear-gradient(180deg, transparent, #8a4bff, transparent);
+    animation: circuitMoveVertical 4s linear infinite;
+}
+
+@keyframes circuitMove {
+    0% { transform: translateX(-200px); }
+    100% { transform: translateX(200px); }
+}
+
+@keyframes circuitMoveVertical {
+    0% { transform: translateY(-200px); }
+    100% { transform: translateY(200px); }
+}
