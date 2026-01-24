@@ -5,26 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus Bot — IA de Moderación</title>
     <link rel="stylesheet" href="style.css">
+
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
     <script src="script.js" defer></script>
 </head>
 <body class="theme-dark">
 
     <!-- LOADING SCREEN -->
     <div id="loadingScreen">
-    <div class="loader-container">
-        <div class="loader-circle"></div>
-        <h2 class="loader-title">Nexus Bot</h2>
-        <p class="loader-text" id="loadingText">Inicializando módulos...</p>
-    </div>
+        <div class="loader-container">
+            <div class="loader-circle"></div>
+            <h2 class="loader-title">Nexus Bot</h2>
+            <p class="loader-text" id="loadingText">Inicializando módulos...</p>
+        </div>
     </div>
 
     <!-- FONDO CÓDIGO DIGITAL -->
-    <div class="code-background">
-        <canvas id="codeCanvas"></canvas>
-    </div>
+    <canvas id="codeCanvas"></canvas>
 
     <!-- NAVBAR -->
     <nav class="navbar">
@@ -35,6 +35,7 @@
             <li><a href="#utilities">Utilidades</a></li>
             <li><a href="#features">Características</a></li>
         </ul>
+        <button id="themeToggle" class="theme-toggle">☾</button>
     </nav>
 
     <!-- HERO -->
@@ -115,4 +116,5 @@
 
 </body>
 </html>
+
 
