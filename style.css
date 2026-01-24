@@ -99,13 +99,34 @@ body.theme-light .navbar {
     border-bottom-color: rgba(138, 75, 255, 0.2);
 }
 
-.navbar .logo {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #8a4bff;
-    letter-spacing: 2px;
+/* LOGO */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+.logo-img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px #8a4bff);
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 12px #a06cff);
+}
+
+.logo-text {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #8a4bff;
+    letter-spacing: 1px;
+}
+
+/* NAV LINKS */
 .navbar ul {
     list-style: none;
     display: flex;
