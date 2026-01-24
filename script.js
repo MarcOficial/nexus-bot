@@ -1,4 +1,6 @@
-// THEME TOGGLE
+/* ------------------------------
+   TEMA OSCURO / CLARO
+------------------------------ */
 const body = document.body;
 const themeToggle = document.getElementById('themeToggle');
 
@@ -9,7 +11,6 @@ function setTheme(theme) {
     themeToggle.textContent = theme === 'theme-dark' ? '☾' : '☀';
 }
 
-// Cargar tema guardado
 const savedTheme = localStorage.getItem('nexus-theme') || 'theme-dark';
 setTheme(savedTheme);
 
@@ -18,31 +19,60 @@ themeToggle.addEventListener('click', () => {
     setTheme(newTheme);
 });
 
-// GSAP ANIMACIONES
-window.addEventListener('load', () => {
-    gsap.from('.navbar', { y: -50, opacity: 0, duration: 0.8, ease: 'power3.out' });
-    gsap.from('.hero-title', { y: 40, opacity: 0, duration: 1, ease: 'power3.out' });
-    gsap.from('.subtitle', { y: 30, opacity: 0, duration: 1, delay: 0.2, ease: 'power3.out' });
-    gsap.from('.buttons .btn', { y: 20, opacity: 0, duration: 0.6, delay: 0.4, stagger: 0.1 });
+/* ------------------------------
+   PANTALLA DE CARGA
+------------------------------ */
+const loadingPhrases = [
+    "Inicializando módulos...",
+    "Cargando sistema anti-raid...",
+    "Optimizando seguridad...",
+    "Sincronizando comandos...",
+    "Conectando con Discord API...",
+    "Nexus Bot está listo."
+];
 
-    gsap.utils.toArray('.section').forEach(section => {
-        gsap.from(section, {
-            scrollTrigger: {
-                trigger: section,
-                start: 'top 80%',
-            },
-            y: 40,
-            opacity: 0,
-            duration: 0.8,
-            ease: 'power2.out'
-        });
+let phraseIndex = 0;
+const loadingText = document.getElementById("loadingText");
+
+setInterval(() => {
+    loadingText.textContent = loadingPhrases[phraseIndex];
+    phraseIndex = (phraseIndex + 1) % loadingPhrases.length;
+}, 1200);
+
+window.addEventListener("load", () => {
+    gsap.to("#loadingScreen", {
+        opacity: 0,
+        duration: 1,
+        delay: 2.5,
+        onComplete: () => {
+            document.getElementById("loadingScreen").classList.add("hidden");
+        }
+    });
+
+    gsap.from(".hero-title", { y: 40, opacity: 0, duration: 1.2, ease: "power3.out", delay: 3 });
+    gsap.from(".subtitle", { y: 30, opacity: 0, duration: 1, ease: "power3.out", delay: 3.2 });
+});
+
+/* ------------------------------
+   ANIMACIONES GSAP SCROLL
+------------------------------ */
+gsap.utils.toArray('.section').forEach(section => {
+    gsap.from(section, {
+        scrollTrigger: {
+            trigger: section,
+            start: 'top 80%',
+        },
+        y: 40,
+        opacity: 0,
+        duration: 0.8,
+        ease: 'power2.out'
     });
 });
 
-// 3D CARDS
-const cards3D = document.querySelectorAll('.card-3d');
-
-cards3D.forEach(card => {
+/* ------------------------------
+   CARDS 3D
+------------------------------ */
+document.querySelectorAll('.card-3d').forEach(card => {
     card.addEventListener('mousemove', (e) => {
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
@@ -60,7 +90,9 @@ cards3D.forEach(card => {
     });
 });
 
-// FONDO CÓDIGO DIGITAL (tipo Matrix)
+/* ------------------------------
+   FONDO MATRIX
+------------------------------ */
 const canvas = document.getElementById('codeCanvas');
 const ctx = canvas.getContext('2d');
 
@@ -100,38 +132,3 @@ function drawMatrix() {
 }
 drawMatrix();
 
-
-// TEXTOS DINÁMICOS DEL BOT
-const loadingPhrases = [
-    "Inicializando módulos...",
-    "Cargando sistema anti-raid...",
-    "Optimizando seguridad...",
-    "Sincronizando comandos...",
-    "Conectando con Discord API...",
-    "Nexus Bot está listo."
-];
-
-let phraseIndex = 0;
-const loadingText = document.getElementById("loadingText");
-
-function changeLoadingText() {
-    loadingText.textContent = loadingPhrases[phraseIndex];
-    phraseIndex = (phraseIndex + 1) % loadingPhrases.length;
-}
-setInterval(changeLoadingText, 1200);
-
-// ANIMACIÓN DE ENTRADA Y SALIDA
-window.addEventListener("load", () => {
-    gsap.to("#loadingScreen", {
-        opacity: 0,
-        duration: 1,
-        delay: 2.5,
-        onComplete: () => {
-            document.getElementById("loadingScreen").classList.add("hidden");
-        }
-    });
-
-    // Animación de entrada del contenido
-    gsap.from(".hero-title", { y: 40, opacity: 0, duration: 1.2, ease: "power3.out", delay: 3 });
-    gsap.from(".subtitle", { y: 30, opacity: 0, duration: 1, ease: "power3.out", delay: 3.2 });
-});
