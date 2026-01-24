@@ -4,9 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nexus Bot — IA de Moderación</title>
-    <link rel="icon" href="nexus bots.webp" type="image/webp">
-    <link rel="shortcut icon" href="nexus bots.webp" type="image/webp">
-
     <link rel="stylesheet" href="style.css">
 
     <!-- GSAP -->
@@ -17,16 +14,20 @@
 </head>
 <body class="theme-dark">
 
+    <!-- SCANLINES -->
+    <div class="scanlines"></div>
+
+    <!-- PARTICLES -->
+    <div id="particles"></div>
+
     <!-- LOADING SCREEN -->
     <div id="loadingScreen">
         <div class="loader-container">
-        <img src="nexus bots.webp" class="loader-logo" alt="Logo Nexus Bot">
-        <div class="loader-circle"></div>
-        <h2 class="loader-title glitch">Nexus Bot</h2>
-        <p class="loader-text" id="loadingText">Inicializando módulos...</p>
+            <img src="nexus bots.webp" class="loader-logo" alt="Logo Nexus Bot">
+            <div class="loader-circle"></div>
+            <h2 class="loader-title glitch" data-text="Nexus Bot">Nexus Bot</h2>
+            <p class="loader-text" id="loadingText">Inicializando módulos...</p>
         </div>
-
-
     </div>
 
     <!-- FONDO MATRIX -->
@@ -52,7 +53,7 @@
     <!-- HERO -->
     <header class="hero">
         <div class="hero-content">
-            <h1 class="hero-title"><span class="glow">Nexus Bot</span></h1>
+            <h1 class="hero-title neon">Nexus Bot</h1>
             <p class="subtitle">La inteligencia artificial que impulsa tu servidor.</p>
 
             <div class="buttons">
@@ -64,7 +65,7 @@
 
     <!-- SOBRE EL BOT -->
     <section class="section about" id="about">
-        <h2 class="section-title">¿Qué es Nexus Bot?</h2>
+        <h2 class="section-title neon">¿Qué es Nexus Bot?</h2>
         <p class="section-text">
             Nexus Bot es un sistema avanzado de moderación y utilidades diseñado para servidores que buscan 
             estabilidad, automatización y una experiencia futurista. Cada módulo está optimizado para ofrecer 
@@ -74,7 +75,7 @@
 
     <!-- MODERACIÓN -->
     <section class="section features" id="moderation">
-        <h2 class="section-title">🛡️ Moderación y Seguridad</h2>
+        <h2 class="section-title neon">🛡️ Moderación y Seguridad</h2>
         <div class="cards">
             <div class="card card-3d">
                 <h3>🔹 Anti-Spam / Anti-Raid</h3>
@@ -97,7 +98,7 @@
 
     <!-- UTILIDADES -->
     <section class="section utilities" id="utilities">
-        <h2 class="section-title">🛠️ Utilidades y Personalización</h2>
+        <h2 class="section-title neon">🛠️ Utilidades y Personalización</h2>
         <div class="cards">
             <div class="card card-3d">
                 <h3>💻 Comandos de Utilidad</h3>
@@ -112,7 +113,7 @@
 
     <!-- CARACTERÍSTICAS -->
     <section class="section highlights" id="features">
-        <h2 class="section-title">🎯 Características del Bot</h2>
+        <h2 class="section-title neon">🎯 Características del Bot</h2>
         <ul class="highlight-list">
             <li>⚡ Estabilidad y rendimiento de nivel empresarial</li>
             <li>🔄 Actualizaciones constantes con IA integrada</li>
@@ -127,3 +128,4 @@
 
 </body>
 </html>
+
