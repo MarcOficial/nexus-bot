@@ -1,0 +1,256 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root {
+  --primary-blue: #00aaff;
+  --accent-blue: #66ccff;
+  --text-light: #ffffff;
+  --bg-dark: #000000;
+}
+
+/* BODY */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+/* SCANLINES */
+.scanlines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.03) 0px,
+    rgba(255,255,255,0.03) 2px,
+    transparent 2px,
+    transparent 4px
+  );
+  z-index: 999;
+}
+
+/* PARTICLES */
+#particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* CIRCUIT LINES */
+#circuit-lines {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  backdrop-filter: blur(12px);
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 1000;
+  border-bottom: 1px solid var(--primary-blue);
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  width: 42px;
+  height: 42px;
+  filter: drop-shadow(0 0 6px var(--primary-blue));
+}
+
+.logo-text {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--primary-blue);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.navbar a {
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  color: var(--accent-blue);
+}
+
+/* HEADER */
+.header {
+  padding-top: 120px;
+  text-align: center;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+
+.neon {
+  color: var(--accent-blue);
+  text-shadow: 0 0 10px var(--primary-blue);
+}
+
+.subtitle {
+  margin-top: 10px;
+  opacity: 0.8;
+}
+
+/* SECTIONS */
+.section {
+  padding: 80px 40px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.4rem;
+  margin-bottom: 20px;
+  color: var(--accent-blue);
+  text-shadow: 0 0 10px var(--primary-blue);
+}
+
+/* CONFIG BOX */
+.config-box {
+  margin: 20px auto;
+  max-width: 600px;
+  text-align: left;
+}
+
+.config-box label {
+  font-size: 1.1rem;
+  color: var(--accent-blue);
+}
+
+.config-box input,
+.config-box textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  border-radius: 8px;
+  border: 1px solid var(--primary-blue);
+  background: #000;
+  color: var(--text-light);
+}
+
+/* MODULES */
+.module-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.module-card {
+  background: rgba(0,0,0,0.85);
+  padding: 25px;
+  width: 260px;
+  border-radius: 12px;
+  border: 1px solid var(--primary-blue);
+  box-shadow: 0 0 10px rgba(0,170,255,0.3);
+}
+
+/* SWITCH */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 55px;
+  height: 28px;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  background: #444;
+  border-radius: 28px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  left: 3px;
+  top: 3px;
+  background: white;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+input:checked + .slider {
+  background: var(--primary-blue);
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* BUTTONS */
+.btn {
+  padding: 12px 26px;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary {
+  background: var(--primary-blue);
+  color: #000;
+}
+
+.primary:hover {
+  background: var(--accent-blue);
+}
+
+.secondary {
+  border: 2px solid var(--primary-blue);
+  background: transparent;
+  color: var(--primary-blue);
+}
+
+.secondary:hover {
+  background: var(--primary-blue);
+  color: #000;
+}
+
+/* FOOTER */
+footer {
+  background: #000;
+  padding: 25px;
+  text-align: center;
+  border-top: 1px solid var(--primary-blue);
+  margin-top: 40px;
+  color: var(--accent-blue);
+}
