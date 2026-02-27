@@ -11,7 +11,7 @@ app.use(cors());
 // ---------------------------
 const PANEL_URL = "https://panel.lynxnodes.es";
 const SERVER_ID = "6bcbc51d";
-const API_KEY = "AQUI_TU_API_KEY"; // <-- PON AQUÍ TU API KEY
+const API_KEY = "ptlc_HWMnLXZqSCs";// <-- PON AQUÍ TU API KEY
 
 // ---------------------------
 // SUBIR O EDITAR ARCHIVO
