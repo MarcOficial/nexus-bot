@@ -1,1 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Bot — Dashboard</title>
+    <link rel="icon" href="nexus bots.webp" type="image/webp">
+    <link rel="stylesheet" href="dashboard.css">
+</head>
 
+<body>
+
+    <!-- SCANLINES -->
+    <div class="scanlines"></div>
+
+    <!-- PARTICLES -->
+    <div id="particles"></div>
+
+    <!-- CIRCUIT LINES -->
+    <div id="circuit-lines"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="logo-container">
+            <img src="nexus bots.webp" alt="Nexus Bot Logo" class="logo-img">
+            <span class="logo-text">NEXUS DASHBOARD</span>
+        </div>
+
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#config">Configuración</a></li>
+            <li><a href="#modules">Módulos</a></li>
+            <li><a href="#actions">Acciones</a></li>
+        </ul>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1 class="title neon">Panel de Control</h1>
+        <p class="subtitle">Gestiona la configuración de tu bot Nexus en tiempo real.</p>
+    </header>
+
+    <!-- CONFIGURACIÓN -->
+    <section class="section" id="config">
+        <h2 class="section-title neon">⚙️ Configuración General</h2>
+
+        <div class="config-box">
+            <label>Prefix del Bot</label>
+            <input type="text" id="prefixInput" placeholder="Ejemplo: !">
+        </div>
+
+        <div class="config-box">
+            <label>Mensaje de Bienvenida</label>
+            <textarea id="welcomeInput" placeholder="Escribe el mensaje..."></textarea>
+        </div>
+
+        <button class="btn primary" onclick="saveConfig()">Guardar Cambios</button>
+    </section>
+
+    <!-- MÓDULOS -->
+    <section class="section" id="modules">
+        <h2 class="section-title neon">🧩 Módulos</h2>
+
+        <div class="module-grid">
+            <div class="module-card">
+                <h3>Anti-Spam</h3>
+                <label class="switch">
+                    <input type="checkbox" id="antiSpam">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="module-card">
+                <h3>Auto-Mod</h3>
+                <label class="switch">
+                    <input type="checkbox" id="autoMod">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="module-card">
+                <h3>Verificación</h3>
+                <label class="switch">
+                    <input type="checkbox" id="verify">
+                    <span class="slider"></span>
+                </label>
+            </div>
+        </div>
+
+        <button class="btn primary" onclick="saveModules()">Guardar Módulos</button>
+    </section>
+
+    <!-- ACCIONES -->
+    <section class="section" id="actions">
+        <h2 class="section-title neon">🚀 Acciones del Servidor</h2>
+
+        <div class="actions">
+            <button class="btn secondary" onclick="restartBot()">Reiniciar Bot</button>
+            <button class="btn secondary" onclick="reloadConfig()">Recargar Configuración</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Nexus Bot — Dashboard Futurista</p>
+    </footer>
+
+    <script>
+        function saveConfig() {
+            alert("Configuración guardada (cuando conectemos la API se enviará al servidor).");
+        }
+
+        function saveModules() {
+            alert("Módulos actualizados.");
+        }
+
+        function restartBot() {
+            alert("El bot se reiniciará cuando conectemos la API.");
+        }
+
+        function reloadConfig() {
+            alert("La configuración se recargará cuando conectemos la API.");
+        }
+    </script>
+
+</body>
+</html>
